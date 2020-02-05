@@ -32,11 +32,12 @@ cmake ..
 make
 ```
 
-To build the gui as well, pass the CMAKE option `INSTALL_RCDISCOVER_GUI`
+To build the gui as well, pass the CMAKE option `BUILD_RCDISCOVER_GUI`:
 
 ```
-cmake -DINSTALL_RCDISCOVER_GUI=ON ..
+cmake -DBUILD_RCDISCOVER_GUI=ON ..
 ```
+
 
 Afterwards, the binaries can be found in `build/tools/`.
 
@@ -44,10 +45,17 @@ Afterwards, the binaries can be found in `build/tools/`.
 
 Installation can either be done via
 
-* `make install`
-* `make package` builds a Debian package
+```
+make install
+```
 
-  which can be installed with e.g. `sudo dpkg -i rcdiscover*.deb`
+On Debian (and derivatives like Ubuntu) Debian packages can be built with
+
+```
+cmake -DCMAKE_INSTALL_PREFIX="/usr" ..
+make package
+```
+which can be installed with e.g. `sudo dpkg -i rcdiscover*.deb`
 
 
 Discovering sensors in other subnets
