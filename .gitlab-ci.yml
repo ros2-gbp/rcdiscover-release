@@ -38,6 +38,12 @@ variables:
     - amd64
     - docker
 
+.armhf_bionic_t: &armhf_bionic_job
+  image: registry.roboception.de/tools/docker_images:armhf-bionic-buildimage
+  tags:
+    - armhf
+    - docker
+
 #############
 # Templates
 #############
@@ -45,7 +51,7 @@ variables:
   stage: test
   script:
     - mkdir build && cd build
-    - cmake -DINSTALL_RCDISCOVER_GUI=ON ..
+    - cmake -DBUILD_RCDISCOVER_GUI=ON ..
     - make -j 4
     - CTEST_OUTPUT_ON_FAILURE=1 make test
 
@@ -55,16 +61,11 @@ variables:
   script:
     - mkdir build && cd build
     - if [ -n "$ROS_DISTRO" ]; then
-        cmake -DRCDISCOVER_GUI_ONLY_DEB=OFF -DCMAKE_INSTALL_PREFIX="/opt/ros/$ROS_DISTRO" -DCMAKE_PREFIX_PATH="/opt/ros/$ROS_DISTRO" -DCMAKE_BUILD_TYPE=Release .. ;
-        make -j4 package ;
-        cmake -DRCDISCOVER_GUI_ONLY_DEB=ON -DCMAKE_INSTALL_PREFIX="/opt/ros/$ROS_DISTRO" -DCMAKE_PREFIX_PATH="/opt/ros/$ROS_DISTRO" -DCMAKE_BUILD_TYPE=Release .. ;
-        make -j4 package ;
+        cmake -DBUILD_RCDISCOVER_GUI=ON -DCMAKE_INSTALL_PREFIX="/opt/ros/$ROS_DISTRO" -DCMAKE_PREFIX_PATH="/opt/ros/$ROS_DISTRO" -DCMAKE_BUILD_TYPE=Release .. ;
       else
-        cmake -DRCDISCOVER_GUI_ONLY_DEB=OFF .. ;
-        make -j4 package ;
-        cmake -DRCDISCOVER_GUI_ONLY_DEB=ON .. ;
-        make -j4 package ;
+        cmake -DBUILD_RCDISCOVER_GUI=ON -DCMAKE_INSTALL_PREFIX="/usr" .. ;
       fi
+    - make -j4 package
     - if [ -z "$APT_REPO" ]; then export APT_REPO=testing; fi
     - upload_deb.sh $DISTRO_CODENAME-$APT_REPO *.deb
 
@@ -144,6 +145,10 @@ test:bionic:amd64:
   <<: *amd64_bionic_job
   extends: .test
 
+test:bionic:armhf:
+  <<: *armhf_bionic_job
+  extends: .test
+
 # Deploy testing (only on master)
 #################################
 package_testing:trusty:amd64:
@@ -166,6 +171,10 @@ package_testing:bionic:amd64:
   <<: *amd64_bionic_job
   extends: .package_testing
 
+package_testing:bionic:armhf:
+  <<: *armhf_bionic_job
+  extends: .package_testing
+
 # Deploy stable (only for releases, version tags)
 #################################################
 package_stable:trusty:amd64:
@@ -186,6 +195,10 @@ package_stable:xenial:armhf:
 
 package_stable:bionic:amd64:
   <<: *amd64_bionic_job
+  extends: .package_stable
+
+package_stable:bionic:armhf:
+  <<: *armhf_bionic_job
   extends: .package_stable
 
 # Build and push as docker image
