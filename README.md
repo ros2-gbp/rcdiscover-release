@@ -1,3 +1,26 @@
+## rcdiscover (melodic) - 1.0.2-1
+
+The packages in the `rcdiscover` repository were released into the `melodic` distro by running `/usr/bin/bloom-release --ros-distro melodic rcdiscover` on `Wed, 05 Feb 2020 17:58:31 -0000`
+
+The `rcdiscover` package was released.
+
+Version of package(s) in repository `rcdiscover`:
+
+- upstream repository: https://github.com/roboception/rcdiscover.git
+- release repository: https://github.com/roboception-gbp/rcdiscover-release.git
+- rosdistro version: `1.0.0-1`
+- old version: `1.0.0-1`
+- new version: `1.0.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.0`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.40`
+
+
 ## rcdiscover (kinetic) - 1.0.2-1
 
 The packages in the `rcdiscover` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release --ros-distro kinetic rcdiscover` on `Wed, 05 Feb 2020 17:54:43 -0000`
