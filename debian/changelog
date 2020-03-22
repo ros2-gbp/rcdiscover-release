@@ -1,0 +1,133 @@
+ros-melodic-rcdiscover (1.0.3-1stretch) stretch; urgency=high
+
+  * fix mapping of reachability flag in the GUI
+  * more generic naming as it can also be used for other GEV devices
+  * only show rc_visards in "reset" dialog
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Sat, 21 Mar 2020 23:00:00 -0000
+
+ros-melodic-rcdiscover (1.0.2-1stretch) stretch; urgency=high
+
+  * Added filtering by model name in command line tool
+  * Do not append alternative interface to output of cli if --serialonly or --iponly is given
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 11 Dec 2019 23:00:00 -0000
+
+ros-melodic-rcdiscover (1.0.1-1stretch) stretch; urgency=high
+
+  * rename CMAKE options from INSTALL_x to BUILD_x
+  * improve debian packaging via CPack
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Sun, 15 Sep 2019 22:00:00 -0000
+
+ros-melodic-rcdiscover (1.0.0-1stretch) stretch; urgency=high
+
+  * fix wildcard matching
+  * allow filtering by interface
+  * print interface on which the device was found
+  * also build shared lib for use in other packages
+  * make it possible to release as ROS third party package
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Mon, 03 Jun 2019 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.9.2-1stretch) stretch; urgency=high
+
+  * GUI: fix WebGUI cannot be opened via context menu (GitHub issue #4)
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 09 Jan 2019 23:00:00 -0000
+
+ros-melodic-rcdiscover (0.9.0-1stretch) stretch; urgency=high
+
+  * CLI: print model
+  * extend CLI interface (SW-302)
+    * reset
+    * forceip
+    * reconnect
+  * show model on GUI (SW-300)
+  * GUI: show complete package version in about dialog
+  * fixed hidden buttons for Ubuntu Bionic
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Tue, 18 Dec 2018 23:00:00 -0000
+
+ros-melodic-rcdiscover (0.8.0-1stretch) stretch; urgency=high
+
+  * add opying device info to clipboard
+  * add device filter text field
+  * Changed some dialog workflows
+  * Added KUKA to manufacturer filter
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Sun, 11 Nov 2018 23:00:00 -0000
+
+ros-melodic-rcdiscover (0.7.0-1stretch) stretch; urgency=high
+
+  * Added possibility to filter for name, serial number and mac address to command line tool
+  * include <array> in utils
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Thu, 04 Jan 2018 23:00:00 -0000
+
+ros-melodic-rcdiscover (0.6.0-1stretch) stretch; urgency=high
+
+  * add force IP command: setting of temporary IP address
+  * add -serialonly flag for command line tool
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 08 Nov 2017 23:00:00 -0000
+
+ros-melodic-rcdiscover (0.5.0-1stretch) stretch; urgency=high
+
+  * Optional disabling of RP filtering during installation on Ubuntu
+  * Directed broadcasts on Windows
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Thu, 28 Sep 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.4.2-1stretch) stretch; urgency=high
+
+  * add Desktop files and icons for debian
+  * Disabled vectorization and binding to CUDA
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 30 Aug 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.4.1-1stretch) stretch; urgency=high
+
+  * Fixed bug that prevented the main window from being closed once the help dialog was opened from the reset dialog
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Sun, 20 Aug 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.4.0-1stretch) stretch; urgency=high
+
+  * Help buttons
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Thu, 03 Aug 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.3.2-1stretch) stretch; urgency=high
+
+  * Build console application as Windows console application
+  * Sign with SHA512
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 05 Jul 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.3.1-1stretch) stretch; urgency=high
+
+  * Fixed rcdiscover console application
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Mon, 03 Jul 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.3.0-1stretch) stretch; urgency=high
+
+  * Global broadcast instead of directed
+  * add reachability check via ping
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Mon, 03 Jul 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.2.0-1stretch) stretch; urgency=high
+
+  * Removed IP address form from Reset Dialog
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Wed, 28 Jun 2017 22:00:00 -0000
+
+ros-melodic-rcdiscover (0.1.0-1stretch) stretch; urgency=high
+
+  * Initial release
+
+ -- Felix Ruess <felix.ruess@roboception.de>  Sun, 25 Jun 2017 22:00:00 -0000
+
+
