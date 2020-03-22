@@ -1,5 +1,5 @@
 /*
- * rcdiscover - the network discovery tool for rc_visard
+ * rcdiscover - the network discovery tool for Roboception devices
  *
  * Copyright (c) 2017 Roboception GmbH
  * All rights reserved
@@ -125,7 +125,7 @@ DiscoverFrame::DiscoverFrame(const wxString& title,
     int w, h;
     discover_button_->GetSize(&w, &h);
     auto *only_rc_cbox = new wxCheckBox(panel, ID_OnlyRcCheckbox,
-                                        "Only Roboception cameras",
+                                        "Only Roboception devices",
                                         wxDefaultPosition, wxSize(-1, h));
     only_rc_cbox->SetValue(only_rc_sensors_);
     button_box->Add(only_rc_cbox, 1);
@@ -153,7 +153,7 @@ DiscoverFrame::DiscoverFrame(const wxString& title,
     vbox->Add(button_box, 0, wxALL, 10);
   }
 
-  // rc_visard table
+  // device table
   {
     auto *data_box = new wxBoxSizer(wxHORIZONTAL);
 
@@ -213,7 +213,7 @@ DiscoverFrame::DiscoverFrame(const wxString& title,
     button_box->Add(force_ip_button_, 1);
 
     reconnect_button_ = new wxButton(panel, ID_ReconnectButton,
-                                    "Reconnect rc_visard");
+                                    "Reconnect device");
     button_box->Add(reconnect_button_, 1);
 
     button_box->Add(-1, 0, wxEXPAND);
@@ -364,29 +364,38 @@ void DiscoverFrame::updateDeviceList(const std::vector<wxVector<wxVariant>> &d)
 {
   device_list_->DeleteAllItems();
 
+  std::vector<bool> show_in_reset_dialog;
+
   last_data_ = d;
   for(const auto& d : last_data_)
   {
-    const auto manufacturer = d[MANUFACTURER].GetString();
-    if (!only_rc_sensors_ || manufacturer == ROBOCEPTION)
-    {
+    const bool matches_filter = [&] {
       if (!filter_text_.empty())
       {
-        const auto &filter_text = filter_text_;
-        const bool none = std::none_of(d.begin(), d.end(), [&filter_text](const wxVariant &v)
-        {
+        const auto& filter_text = filter_text_;
+        const bool none = std::none_of(d.begin(), d.end(), [&filter_text](const wxVariant& v) {
           const auto s = v.GetString().ToStdString();
           return wildcardMatch(s.begin(), s.end(), filter_text.begin(), filter_text.end());
         });
         if (none)
-        { continue; }
+        {
+          return false;
+        }
       }
+      return true;
+    }();
 
+    const bool manufactured_by_rc = d[MANUFACTURER].GetString() == ROBOCEPTION;
+    if (matches_filter && (!only_rc_sensors_ || manufactured_by_rc))
+    {
       device_list_->AppendItem(d);
+
+      const bool is_rc_visard = manufactured_by_rc && d[MODEL].GetString().StartsWith(RC_VISARD);
+      show_in_reset_dialog.push_back(is_rc_visard);
     }
   }
 
-  reset_dialog_->setDiscoveredSensors(device_list_->GetStore());
+  reset_dialog_->setDiscoveredSensors(device_list_->GetStore(), show_in_reset_dialog);
   force_ip_dialog_->setDiscoveredSensors(device_list_->GetStore());
   reconnect_dialog_->setDiscoveredSensors(device_list_->GetStore());
 }
