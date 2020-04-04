@@ -1,3 +1,26 @@
+## rcdiscover (dashing) - 1.0.4-1
+
+The packages in the `rcdiscover` repository were released into the `dashing` distro by running `/usr/bin/bloom-release --ros-distro dashing --new-track rcdiscover` on `Sat, 04 Apr 2020 16:48:12 -0000`
+
+The `rcdiscover` package was released.
+
+Version of package(s) in repository `rcdiscover`:
+
+- upstream repository: https://github.com/roboception/rcdiscover.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `1.0.4-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.3`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## rcdiscover (noetic) - 1.0.4-1
 
 The packages in the `rcdiscover` repository were released into the `noetic` distro by running `/usr/bin/bloom-release --ros-distro noetic rcdiscover` on `Sat, 04 Apr 2020 16:39:48 -0000`
