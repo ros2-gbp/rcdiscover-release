@@ -1,0 +1,12 @@
+Source: ros-eloquent-rcdiscover
+Section: misc
+Priority: optional
+Maintainer: Felix Ruess <felix.ruess@roboception.de>
+Build-Depends: debhelper (>= 9.0.0), cmake, ros-eloquent-ros-workspace
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-eloquent-rcdiscover
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-eloquent-ros-workspace
+Description: This package contains tools for the discovery of Roboception devices via GigE Vision.
