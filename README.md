@@ -1,3 +1,26 @@
+## rcdiscover (noetic) - 1.1.2-1
+
+The packages in the `rcdiscover` repository were released into the `noetic` distro by running `/usr/bin/bloom-release --ros-distro noetic rcdiscover` on `Tue, 15 Jun 2021 14:53:42 -0000`
+
+The `rcdiscover` package was released.
+
+Version of package(s) in repository `rcdiscover`:
+
+- upstream repository: https://github.com/roboception/rcdiscover.git
+- release repository: https://github.com/roboception-gbp/rcdiscover-release.git
+- rosdistro version: `1.0.4-1`
+- old version: `1.0.4-1`
+- new version: `1.1.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.7`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.1`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## rcdiscover (eloquent) - 1.0.4-1
 
 The packages in the `rcdiscover` repository were released into the `eloquent` distro by running `/usr/bin/bloom-release --ros-distro eloquent --new-track rcdiscover` on `Mon, 06 Apr 2020 09:09:21 -0000`
