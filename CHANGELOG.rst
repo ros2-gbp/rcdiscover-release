@@ -2,6 +2,33 @@
 Changelog for package rcdiscover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.2 (2021-06-14)
+------------------
+
+* update cmake files and packaging, requires cmake >= 3.1
+
+1.1.1 (2021-04-16)
+------------------
+
+* Ignore network unreachable socket error under Windows
+
+1.1.0 (2021-02-05)
+------------------
+
+* Treat all devices as comming from Roboception if model starts with either rc_visard or rc_cube
+
+1.0.5 (2020-10-02)
+------------------
+
+* Added building on CI for focal
+* persistently store window state
+
+1.0.4 (2020-04-04)
+------------------
+
+* only enable reset button and context menu entry for rc_visard devices
+* remove catkin build_export_depend from package.xml
+
 1.0.3 (2020-03-22)
 ------------------
 
