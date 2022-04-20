@@ -1,1 +1,1 @@
-{"base": "d6514fd", "parent": "debian/rolling/rcdiscover", "previous": "193e30c", "trim": "", "trimbase": ""}
+{"base": "ec5ffe5", "parent": "debian/humble/rcdiscover", "previous": "7978efd", "trim": "", "trimbase": ""}
