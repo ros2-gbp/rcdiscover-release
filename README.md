@@ -8,6 +8,7 @@ This package contains tools for the discovery of Roboception devices
 - `rcdiscover-gui`: graphical application for discovering Roboception devices and
   sending magic packets for resetting of parameters
 
+**Installation:** You can find some prebuilt packages for Linux or Windows on the [releases](https://github.com/roboception/rcdiscover/releases) page. Alternatively follow the compilation steps in the next sections.
 
 Compiling on Linux
 ------------------
@@ -16,10 +17,12 @@ For compilation of `rcdiscover` cmake is required.
 
 `rcdiscover-gui` additionally requires [WxWidgets](http://www.wxwidgets.org/).
 
-To install this under Debian/Ubuntu:
+To install this under Debian/Ubuntu >= 20.04.0:
 ```
-sudo apt-get install cmake libwxgtk3.0-dev
+sudo apt-get install cmake libwxgtk3.0-gtk3-dev
 ```
+
+In older distributions, the package is called libwxgtk3.0-dev
 
 ### Building rcdiscover
 
