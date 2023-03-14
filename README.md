@@ -1,3 +1,26 @@
+## rcdiscover (rolling) - 1.1.6-1
+
+The packages in the `rcdiscover` repository were released into the `rolling` distro by running `/usr/bin/bloom-release rcdiscover --rosdistro rolling -e` on `Tue, 14 Mar 2023 12:44:47 -0000`
+
+The `rcdiscover` package was released.
+
+Version of package(s) in repository `rcdiscover`:
+
+- upstream repository: https://github.com/roboception/rcdiscover.git
+- release repository: https://github.com/ros2-gbp/rcdiscover-release.git
+- rosdistro version: `1.1.4-2`
+- old version: `1.1.4-2`
+- new version: `1.1.6-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.1`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## rcdiscover (humble) - 1.1.6-1
 
 The packages in the `rcdiscover` repository were released into the `humble` distro by running `/usr/bin/bloom-release rcdiscover --rosdistro humble -e` on `Tue, 14 Mar 2023 12:41:51 -0000`
