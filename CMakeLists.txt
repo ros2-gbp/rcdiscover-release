@@ -31,7 +31,7 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-cmake_minimum_required (VERSION 3.1)
+cmake_minimum_required (VERSION 3.5.0)
 
 project(rcdiscover)
 
@@ -60,16 +60,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
   add_definitions(-Wextra)
   add_definitions(-Wpedantic)
   add_definitions(-Wconversion)
-  add_definitions(-Werror)
-endif ()
-
-if (WIN32)
-  add_definitions(-DWIN32)
-  set(CMAKE_C_FLAGS "-mtune=generic -mno-abm")
-  set(CMAKE_CXX_FLAGS "-mtune=generic -mno-abm")
-  set(CMAKE_CXX_FLAGS_DEBUG "-O0")
-  set(CMAKE_CXX_FLAGS_RELEASE "-O2")
-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++ -static")
+#  add_definitions(-Werror)
 endif ()
 
 option(BUILD_RCDISCOVER_CLI "build rcdiscover commandline tool" ON)
