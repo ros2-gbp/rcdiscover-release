@@ -42,6 +42,11 @@
 #include <array>
 #include <chrono>
 
+#ifdef WIN32
+#undef min
+#undef max
+#endif
+
 int parseFilterArguments(int argc, char **argv, DeviceFilter &filter)
 {
   if (argc == 0)
@@ -112,7 +117,7 @@ std::vector<rcdiscover::DeviceInfo> discoverWithFilter(
     const DeviceFilter &filter)
 {
   rcdiscover::Discover discover;
-  discover.broadcastRequest();
+  discover.broadcastRequest(filter.iface);
 
   std::chrono::steady_clock::time_point tstart=std::chrono::steady_clock::now();
   std::chrono::steady_clock::time_point tend=tstart;
