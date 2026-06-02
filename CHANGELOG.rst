@@ -2,6 +2,54 @@
 Changelog for package rcdiscover
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.2 (2026-06-02)
+------------------
+
+* update minimum cmake version to 3.5
+* [ci] remove focal, add noble arm64
+
+2.1.1 (2025-10-17)
+------------------
+
+* Added building for noble
+
+2.1.0 (2025-04-24)
+------------------
+
+* Prevent sending discovery requests on interfaces that are filtered out in cli tool
+* Do not send useless discovery packages from 127.0.0.1 to 127.0.0.1 (under Linux)
+
+2.0.4 (2025-03-26)
+------------------
+
+* Removed changes to path filtering configuration as sysctl command fails with it
+
+2.0.3 (2025-03-24)
+------------------
+
+* Ensure to turn off reverse path filtering on newer linux systems
+
+2.0.2 (2024-10-16)
+------------------
+
+* Disabled applying filter text from last run of rcdiscover-gui
+
+2.0.1 (2024-07-30)
+------------------
+
+* Added a bit space left of each cell
+* Fixed showing MAC address always with two characters and leading 0 if necessary
+
+2.0.0 (2024-06-11)
+------------------
+
+* rcdiscover-gui has been redeveloped from scratch for replacing wxWidgets by FLTK
+* Additionally to Debian packages for Ubuntu, rcdiscover-gui is now also available as AppImage
+* New features in rcdiscover-gui:
+  * The table is now updated immediately when discovery responses arrive instead of waiting until the last device responds
+  * Filtering and sorting settings are now persistent
+  * Newly discovered devices are highlighted in gray
+
 1.1.7 (2024-03-12)
 ------------------
 
