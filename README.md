@@ -1,3 +1,26 @@
+## rcdiscover (lyrical) - 2.1.2-1
+
+The packages in the `rcdiscover` repository were released into the `lyrical` distro by running `/usr/bin/bloom-release rcdiscover --rosdistro lyrical` on `Tue, 02 Jun 2026 09:45:03 -0000`
+
+The `rcdiscover` package was released.
+
+Version of package(s) in repository `rcdiscover`:
+
+- upstream repository: https://github.com/roboception/rcdiscover.git
+- release repository: https://github.com/ros2-gbp/rcdiscover-release.git
+- rosdistro version: `1.1.7-3`
+- old version: `1.1.7-3`
+- new version: `2.1.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.14.3`
+- catkin_pkg version: `1.1.0`
+- rosdep version: `0.26.0`
+- rosdistro version: `1.0.1`
+- vcstools version: `0.1.42`
+
+
 ## rcdiscover (rolling) - 2.1.2-1
 
 The packages in the `rcdiscover` repository were released into the `rolling` distro by running `/usr/bin/bloom-release rcdiscover --rosdistro rolling` on `Tue, 02 Jun 2026 09:43:33 -0000`
